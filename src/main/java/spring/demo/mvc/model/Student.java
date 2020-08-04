@@ -8,11 +8,6 @@ public class Student extends Person {
     private String studentId;
     private Course course;
 
-    public Student(String studentId, Course course) {
-        this.studentId = studentId;
-        this.course = course;
-    }
-
     public Student() {
     }
 

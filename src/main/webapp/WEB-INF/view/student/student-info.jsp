@@ -24,7 +24,10 @@
     <p>${student.studentId}</p>
     <p>${student.firstName}</p>
     <p>${student.lastName}</p>
-    <p><fmt:formatDate value="${student.birthDate}" pattern="yyyy-MM-dd" /></p>
+    <p>${student.contact}</p>
+    <p>${student.address.street}</p>
+    <p>${student.address.city}</p>
     <p>${student.course.code} : ${student.course.name}</p>
+    <p><fmt:formatDate value="${student.birthDate}" pattern="yyyy-MM-dd" /></p>
 </body>
 </html>

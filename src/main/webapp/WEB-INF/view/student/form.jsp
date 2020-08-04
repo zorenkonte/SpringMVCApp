@@ -43,9 +43,9 @@
                     <div><label for="student-id">Student ID</label><form:input path="studentId" id="student-id"/></div>
                     <div><label for="first-name">First Name</label><form:input path="firstName" id="first-name"/></div>
                     <div><label for="last-name">Last Name</label><form:input path="lastName" id="last-name"/></div>
-                    <div><label>Phone</label><input type="text" name="name"></div>
-                    <div><label>Address</label><input type="text" name="name"></div>
-                    <div><label>City</label><input type="text" name="name"></div>
+                    <div><label for="contact">Contact</label><form:input path="contact" id="contact"/></div>
+                    <div><label for="street">Street</label><form:input path="address.street" id="street"/></div>
+                    <div><label for="city">City</label><form:input path="address.city" id="city"/></div>
                     <div>
                         <label>Course</label>
                         <form:select path="course.code" id="course">
@@ -78,12 +78,12 @@
             </legend>
             <div class="terms-mailing">
                 <div class="checkbox">
-                    <input type="checkbox" name="checkbox"><span>I accept the <a
-                        href="#">Privacy Policy.</a></span>
+                    <input type="checkbox" name="checkbox">
+                    <span>I accept the <a href="#">Privacy Policy.</a></span>
                 </div>
                 <div class="checkbox">
-                    <input type="checkbox"
-                           name="checkbox"><span>I want to recelve personallzed offers by your site</span>
+                    <input type="checkbox" name="checkbox">
+                    <span>I want to recelve personallzed offers by your site</span>
                 </div>
         </fieldset>
         <button type="submit">Submit</button>
