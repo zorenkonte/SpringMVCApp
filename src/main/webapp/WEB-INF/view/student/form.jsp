@@ -12,6 +12,7 @@
 <html>
 <head>
     <spring:url value="/resources/css/main.css" var="mainCss"/>
+    <spring:url value="/resources/js/script.js" var="mainScript"/>
     <spring:url value="/resources/images/spring.png" var="favicon"/>
 
     <title>Student Form</title>
@@ -21,17 +22,29 @@
 </head>
 <body>
 <div class="main-block">
-    <form:form action="processForm" modelAttribute="student" method="GET">
+    <form:form action="processForm" modelAttribute="student" method="POST">
         <h1>Create a free account</h1>
         <fieldset>
             <legend>
                 <h3>Account Details</h3>
             </legend>
             <div class="account-details">
-                <div><label>Email</label><input type="text" name="name"></div>
-                <div><label>Password</label><input type="password" name="name"></div>
-                <div><label>Repeat email</label><input type="text" name="name"></div>
-                <div><label>Repeat password</label><input type="password" name="name"></div>
+                <div>
+                    <label for="email">Email</label>
+                    <form:input path="email" id="email" type="email" required="required"/>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <form:input path="password" id="password" type="password" required="required"/>
+                </div>
+                <div>
+                    <label for="email-confirm">Repeat email</label>
+                    <input id="email-confirm" type="email" required/>
+                </div>
+                <div>
+                    <label for="password-confirm">Repeat password</label>
+                    <input id="password-confirm" type="password" required/>
+                </div>
             </div>
         </fieldset>
         <fieldset>
@@ -40,15 +53,22 @@
             </legend>
             <div class="personal-details">
                 <div>
-                    <div><label for="student-id">Student ID</label><form:input path="studentId" id="student-id"/></div>
-                    <div><label for="first-name">First Name</label><form:input path="firstName" id="first-name"/></div>
-                    <div><label for="last-name">Last Name</label><form:input path="lastName" id="last-name"/></div>
-                    <div><label for="contact">Contact</label><form:input path="contact" id="contact"/></div>
-                    <div><label for="street">Street</label><form:input path="address.street" id="street"/></div>
-                    <div><label for="city">City</label><form:input path="address.city" id="city"/></div>
+                    <div><label for="student-id">Student ID</label><form:input path="studentId" id="student-id"
+                                                                               required="required"/></div>
+                    <div><label for="first-name">First Name</label><form:input path="firstName" id="first-name"
+                                                                               required="required"/></div>
+                    <div><label for="last-name">Last Name</label><form:input path="lastName" id="last-name"
+                                                                             required="required"/></div>
+                    <div><label for="contact">Contact</label><form:input path="contact" id="contact"
+                                                                         required="required"/></div>
+                    <div><label for="street">Street</label><form:input path="address.street" id="street"
+                                                                       required="required"/></div>
+                    <div><label for="city">City</label><form:input path="address.city" id="city" required="required"/>
+                    </div>
                     <div>
                         <label>Course</label>
-                        <form:select path="course.code" id="course">
+                        <form:select path="course.code" id="course" required="required">
+                            <form:option value="" label="Select Course"/>
                             <c:forEach items="${courses}" var="item">
                                 <form:option value="${item.key}" label="${item.value.name}"/>
                             </c:forEach>
@@ -59,15 +79,15 @@
                     <div>
                         <label>Gender</label>
                         <div class="gender">
-                            <input type="radio" value="none" id="male" name="gender"/>
+                            <form:radiobutton path="gender" id="male" value="male" required="required"/>
                             <label for="male" class="radio">Male</label>
-                            <input type="radio" value="none" id="female" name="gender"/>
+                            <form:radiobutton path="gender" id="female" value="female"/>
                             <label for="female" class="radio">Female</label>
                         </div>
                     </div>
                     <div class="birthdate">
                         <label for="birth-date">Birthdate</label>
-                        <form:input path="birthDate" id="birth-date" type="date"/>
+                        <form:input path="birthDate" id="birth-date" type="date" required="required"/>
                     </div>
                 </div>
             </div>
@@ -78,12 +98,12 @@
             </legend>
             <div class="terms-mailing">
                 <div class="checkbox">
-                    <input type="checkbox" name="checkbox">
+                    <input type="checkbox" required>
                     <span>I accept the <a href="#">Privacy Policy.</a></span>
                 </div>
                 <div class="checkbox">
-                    <input type="checkbox" name="checkbox">
-                    <span>I want to recelve personallzed offers by your site</span>
+                    <input type="checkbox">
+                    <span>I want to receive personalized offers by your site</span>
                 </div>
         </fieldset>
         <button type="submit">Submit</button>
@@ -91,3 +111,4 @@
 </div>
 </body>
 </html>
+<script defer src="${mainScript}"></script>

@@ -24,11 +24,10 @@ public class StudentController {
     public String form(Model model) {
         model.addAttribute("student", new Student());
         model.addAttribute("courses", courseList);
-        model.addAttribute("courseCode", "");
         return "student/form";
     }
 
-    @GetMapping("/processForm")
+    @PostMapping("/processForm")
     public String process(@ModelAttribute("student") Student student, @RequestParam("course.code") String code) {
         Course course = courseList.get(code);
         student.setCourse(course);

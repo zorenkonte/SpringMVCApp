@@ -24,7 +24,10 @@
     <p>${student.studentId}</p>
     <p>${student.firstName}</p>
     <p>${student.lastName}</p>
+    <p>${student.gender}</p>
     <p>${student.contact}</p>
+    <p>${student.email}</p>
+    <p>${student.password}</p>
     <p>${student.address.street}</p>
     <p>${student.address.city}</p>
     <p>${student.course.code} : ${student.course.name}</p>

@@ -2,6 +2,7 @@ package spring.demo.mvc.model.base;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import spring.demo.mvc.model.course.Address;
+import spring.demo.mvc.model.enums.Gender;
 
 import java.util.Date;
 
@@ -9,6 +10,7 @@ public class Person extends BaseEntity {
 
     private String firstName;
     private String lastName;
+    private Gender gender;
     private Address address;
     private String contact;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -28,6 +30,14 @@ public class Person extends BaseEntity {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
     public Address getAddress() {
