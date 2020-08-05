@@ -33,9 +33,12 @@ public class StudentController {
     }
 
     @PostMapping("/processForm")
-    public String process(@ModelAttribute("student") Student student, @RequestParam("course.code") String code) {
+    public String process(@ModelAttribute("student") Student student,
+                          @RequestParam("course.code") String code,
+                          Model model) {
         Course course = courseList.get(code);
         student.setCourse(course);
+        model.addAttribute("languageOptions", languages);
         return "student/student-info";
     }
 

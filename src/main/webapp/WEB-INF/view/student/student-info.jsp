@@ -34,8 +34,8 @@
     <p>${student.course.code} : ${student.course.name}</p>
     <p><fmt:formatDate value="${student.birthDate}" pattern="yyyy-MM-dd" /></p>
     <ul>
-        <c:forEach var="language" items="${student.languages}">
-            <li>${language}</li>
+        <c:forEach var="languageKey" items="${student.languages}">
+            <li>${languageOptions.get(languageKey)}</li>
         </c:forEach>
     </ul>
 </body>
