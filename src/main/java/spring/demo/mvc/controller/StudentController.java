@@ -1,6 +1,7 @@
 package spring.demo.mvc.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,9 @@ public class StudentController {
 
     private final Map<String, Course> courseList;
 
+    @Value("#{${list}}")
+    private Map<String, String> languages;
+
     @Autowired
     public StudentController(Map<String, Course> courseList) {
         this.courseList = courseList;
@@ -24,6 +28,7 @@ public class StudentController {
     public String form(Model model) {
         model.addAttribute("student", new Student());
         model.addAttribute("courses", courseList);
+        model.addAttribute("languageOptions", languages);
         return "student/form";
     }
 

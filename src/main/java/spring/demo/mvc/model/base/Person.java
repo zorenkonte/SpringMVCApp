@@ -5,6 +5,7 @@ import spring.demo.mvc.model.course.Address;
 import spring.demo.mvc.model.enums.Gender;
 
 import java.util.Date;
+import java.util.Map;
 
 public class Person extends BaseEntity {
 
@@ -13,6 +14,7 @@ public class Person extends BaseEntity {
     private Gender gender;
     private Address address;
     private String contact;
+    private String[] languages;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthDate;
 
@@ -54,6 +56,14 @@ public class Person extends BaseEntity {
 
     public void setContact(String contact) {
         this.contact = contact;
+    }
+
+    public String[] getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(String[] languages) {
+        this.languages = languages;
     }
 
     public Date getBirthDate() {

@@ -72,7 +72,7 @@ input {
     margin-bottom: 10px;
 }
 
-select, .children, .gender {
+select, .children, .gender, .language {
     width: calc(100% + 26px);
     padding: 5px 0;
 }
@@ -81,11 +81,11 @@ select {
     background: transparent;
 }
 
-.gender input {
+.language input, .gender input {
     width: auto;
 }
 
-.gender label {
+.language input, .gender label {
     padding: 0 5px 0 0;
 }
 
@@ -135,7 +135,7 @@ button {
         width: 60%;
     }
 
-    select, .children, .gender {
+    select, .children, .gender, .language {
         width: calc(60%);
     }
 }

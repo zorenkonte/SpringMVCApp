@@ -89,6 +89,12 @@
                         <label for="birth-date">Birthdate</label>
                         <form:input path="birthDate" id="birth-date" type="date" required="required"/>
                     </div>
+                    <div>
+                        <label>Languages</label>
+                        <div class="language">
+                            <form:checkboxes path="languages" items="${languageOptions}"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </fieldset>

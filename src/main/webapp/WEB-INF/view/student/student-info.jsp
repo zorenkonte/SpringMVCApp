@@ -7,6 +7,7 @@
 --%>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -32,5 +33,10 @@
     <p>${student.address.city}</p>
     <p>${student.course.code} : ${student.course.name}</p>
     <p><fmt:formatDate value="${student.birthDate}" pattern="yyyy-MM-dd" /></p>
+    <ul>
+        <c:forEach var="language" items="${student.languages}">
+            <li>${language}</li>
+        </c:forEach>
+    </ul>
 </body>
 </html>
