@@ -3,11 +3,18 @@ package spring.demo.mvc.model;
 import spring.demo.mvc.model.base.Person;
 import spring.demo.mvc.model.course.Course;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+
 public class Student extends Person {
 
+    @NotBlank(message = "student id is required")
     private String studentId;
+    @NotBlank(message = "email is required")
     private String email;
+    @NotBlank(message = "password is required")
     private String password;
+    @Valid
     private Course course;
 
     public Student() {

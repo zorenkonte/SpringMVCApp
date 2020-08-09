@@ -1,8 +1,12 @@
 package spring.demo.mvc.model.course;
 
+import javax.validation.constraints.NotBlank;
+
 public class Address {
 
+    @NotBlank(message = "street is required")
     private String street;
+    @NotBlank(message = "city is required")
     private String city;
 
     public String getStreet() {

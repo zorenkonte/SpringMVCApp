@@ -4,19 +4,29 @@ import org.springframework.format.annotation.DateTimeFormat;
 import spring.demo.mvc.model.course.Address;
 import spring.demo.mvc.model.enums.Gender;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
-import java.util.Map;
 
 public class Person extends BaseEntity {
 
+    @NotBlank(message = "first name is required")
     private String firstName;
+    @NotBlank(message = "last name is required")
     private String lastName;
+    @NotNull(message = "gender is required")
     private Gender gender;
-    private Address address;
+    @NotBlank(message = "contact is required")
     private String contact;
+    @Size(min = 1, message = "at least 1 is required")
     private String[] languages;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @NotNull(message = "birth date is required")
     private Date birthDate;
+    @Valid
+    private Address address;
 
     public String getFirstName() {
         return firstName;
@@ -42,14 +52,6 @@ public class Person extends BaseEntity {
         this.gender = gender;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
     public String getContact() {
         return contact;
     }
@@ -72,5 +74,13 @@ public class Person extends BaseEntity {
 
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

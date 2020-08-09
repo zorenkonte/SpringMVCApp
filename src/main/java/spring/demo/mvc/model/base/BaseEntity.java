@@ -1,6 +1,5 @@
 package spring.demo.mvc.model.base;
 
-
 import java.io.Serializable;
 import java.util.UUID;
 
