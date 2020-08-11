@@ -1,4 +1,4 @@
-package spring.demo.mvc.model.course;
+package spring.demo.mvc.model;
 
 import javax.validation.constraints.NotBlank;
 
