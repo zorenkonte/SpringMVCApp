@@ -50,12 +50,7 @@ fieldset {
 .account-details > div, .personal-details > div > div {
     display: flex;
     align-items: center;
-    margin: 10px 0 10px 0;
-}
-
-.error-message {
-    padding-left: 41%;
-    color: red;
+    margin-bottom: 10px;
 }
 
 .account-details > div, .personal-details > div, input, label {

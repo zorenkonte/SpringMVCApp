@@ -1,7 +1,7 @@
 package spring.demo.mvc.model.base;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import spring.demo.mvc.model.course.Address;
+import spring.demo.mvc.model.Address;
 import spring.demo.mvc.model.enums.Gender;
 
 import javax.validation.Valid;
@@ -22,7 +22,7 @@ public class Person extends BaseEntity {
     private String contact;
     @Size(min = 1, message = "at least 1 is required")
     private String[] languages;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     @NotNull(message = "birth date is required")
     private Date birthDate;
     @Valid

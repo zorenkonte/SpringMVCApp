@@ -20,7 +20,7 @@ import java.util.Map;
 public class StudentController {
 
     private final Map<String, Course> courseList;
-    private final Student student = new Student();
+    private final Student student;
 
     @Value("#{${list}}")
     private Map<String, String> languages;
@@ -28,6 +28,7 @@ public class StudentController {
     @Autowired
     public StudentController(Map<String, Course> courseList) {
         this.courseList = courseList;
+        student = new Student();
     }
 
     @GetMapping("/form")
@@ -38,7 +39,7 @@ public class StudentController {
         model.addAttribute("courses", courseList);
         model.addAttribute("languageOptions", languages);
         model.addAttribute("title", "Student Form");
-        return "student/form";
+        return "student/form-two";
     }
 
     @PostMapping("/processForm")

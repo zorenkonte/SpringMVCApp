@@ -42,7 +42,7 @@ public class WebApplicationContextConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**")
-                .addResourceLocations("/resources/theme-one/")
+                .addResourceLocations("/resources/theme-two/")
                 .setCachePeriod(31556926);
     }
 
