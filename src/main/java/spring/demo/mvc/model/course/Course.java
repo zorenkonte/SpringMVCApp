@@ -6,7 +6,7 @@ import javax.validation.constraints.NotBlank;
 public class Course {
 
     protected String name;
-    @NotBlank(message = "course is required")
+    @NotBlank(message = "is required")
     protected String code;
 
     public Course() {

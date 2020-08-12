@@ -17,8 +17,9 @@
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label for="email" class="label">email</label>
-                                <form:input path="email" id="email" type="email" cssClass="input--style-4"/>
+                                <label for="email" class="label">email <form:errors path="student.email"
+                                                                                    cssClass="error-message"/></label>
+                                <form:input path="student.email" id="email" type="email" cssClass="input--style-4"/>
                             </div>
                         </div>
                         <div class="col-2">
@@ -31,8 +32,10 @@
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label for="password" class="label">password</label>
-                                <form:input path="password" id="password" type="password" cssClass="input--style-4"/>
+                                <label for="password" class="label">password
+                                    <form:errors path="student.password" cssClass="error-message"/>
+                                </label>
+                                <form:password path="student.password" id="password" cssClass="input--style-4"/>
                             </div>
                         </div>
                         <div class="col-2">
@@ -46,20 +49,22 @@
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label for="student-id" class="label">Student ID</label>
-                                <form:input path="studentId" id="student-id" cssClass="input--style-4"/>
+                                <label for="student-id" class="label">Student ID <form:errors path="student.studentId"
+                                                                                              cssClass="error-message"/></label>
+                                <form:input path="student.studentId" id="student-id" cssClass="input--style-4"/>
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Gender</label>
+                                <label class="label">Gender <form:errors path="student.gender"
+                                                                         cssClass="error-message"/></label>
                                 <div class="p-t-10">
                                     <label for="male" class="radio-container m-r-45">Male
-                                        <form:radiobutton path="gender" id="male" value="male"/>
+                                        <form:radiobutton path="student.gender" id="male" value="male"/>
                                         <span class="checkmark checkmark-radio"></span>
                                     </label>
                                     <label for="female" class="radio-container">Female
-                                        <form:radiobutton path="gender" id="female" value="female"/>
+                                        <form:radiobutton path="student.gender" id="female" value="female"/>
                                         <span class="checkmark checkmark-radio"></span>
                                     </label>
                                 </div>
@@ -69,37 +74,46 @@
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label for="first-name" class="label">first name</label>
-                                <form:input path="firstName" id="first-name" type="text" cssClass="input--style-4"/>
+                                <label for="first-name" class="label">first name <form:errors path="student.firstName"
+                                                                                              cssClass="error-message"/></label>
+                                <form:input path="student.firstName" id="first-name" type="text"
+                                            cssClass="input--style-4"/>
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label for="last-name" class="label">last name</label>
-                                <form:input path="lastName" id="last-name" type="text" cssClass="input--style-4"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row row-space">
-                        <div class="col-2">
-                            <div class="input-group">
-                                <label for="street" class="label">street</label>
-                                <form:input path="address.street" id="street" type="text" cssClass="input--style-4"/>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="input-group">
-                                <label for="city" class="label">city</label>
-                                <form:input path="address.city" id="city" type="text" cssClass="input--style-4"/>
+                                <label for="last-name" class="label">last name <form:errors path="student.lastName"
+                                                                                            cssClass="error-message"/></label>
+                                <form:input path="student.lastName" id="last-name" type="text"
+                                            cssClass="input--style-4"/>
                             </div>
                         </div>
                     </div>
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label for="birth-date" class="label">Birthday</label>
+                                <label for="street" class="label">street <form:errors path="student.address.street"
+                                                                                      cssClass="error-message"/></label>
+                                <form:input path="student.address.street" id="street" type="text"
+                                            cssClass="input--style-4"/>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label for="city" class="label">city <form:errors path="student.address.city"
+                                                                                  cssClass="error-message"/></label>
+                                <form:input path="student.address.city" id="city" type="text"
+                                            cssClass="input--style-4"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label for="birth-date" class="label">Birthday <form:errors path="student.birthDate"
+                                                                                            cssClass="error-message"/></label>
                                 <div class="input-group-icon">
-                                    <form:input path="birthDate" id="birth-date" type="text"
+                                    <form:input path="student.birthDate" id="birth-date" type="text"
                                                 cssClass="input--style-4 js-datepicker" readonly="true"/>
                                     <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                 </div>
@@ -107,17 +121,19 @@
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label for="contact" class="label">Contact #</label>
-                                <form:input path="contact" id="contact" type="text" cssClass="input--style-4"/>
+                                <label for="contact" class="label">Contact # <form:errors path="student.contact"
+                                                                                          cssClass="error-message"/></label>
+                                <form:input path="student.contact" id="contact" type="text" cssClass="input--style-4"/>
                             </div>
                         </div>
                     </div>
                     <div class="input-group">
-                        <label class="label">Languages</label>
+                        <label class="label">Languages <form:errors path="student.languages"
+                                                                    cssClass="error-message"/></label>
                         <div class="p-t-10">
                             <c:forEach items="${languageOptions}" var="item">
                                 <label for="id${item.key}" class="radio-container checkbox-container m-r-45">
-                                    <form:checkbox path="languages" value="${item.key}" id="id${item.key}"
+                                    <form:checkbox path="student.languages" value="${item.key}" id="id${item.key}"
                                                    label="${item.value}"/>
                                     <span class="checkmark"></span>
                                 </label>
@@ -125,10 +141,11 @@
                         </div>
                     </div>
                     <div class="input-group">
-                        <label class="label">Course</label>
+                        <label class="label">Course <form:errors path="student.course.code"
+                                                                 cssClass="error-message"/></label>
                         <div class="rs-select2 js-select-simple select--no-search">
-                            <form:select path="course.code" id="course">
-                                <form:option value="" disabled="true" selected="selected" label="Select Course"/>
+                            <form:select path="student.course.code" id="course">
+                                <form:option value="" selected="selected" label="Select Course"/>
                                 <c:forEach items="${courses}" var="item">
                                     <form:option value="${item.key}" label="${item.value.name}"/>
                                 </c:forEach>

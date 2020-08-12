@@ -4,9 +4,9 @@ import javax.validation.constraints.NotBlank;
 
 public class Address {
 
-    @NotBlank(message = "street is required")
+    @NotBlank(message = "is required")
     private String street;
-    @NotBlank(message = "city is required")
+    @NotBlank(message = "is required")
     private String city;
 
     public String getStreet() {

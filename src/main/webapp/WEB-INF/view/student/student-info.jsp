@@ -10,7 +10,7 @@
 <%@include file="../../includes/header.jsp" %>
 <div class="main-block">
     <form>
-        <h1>${student.id}</h1>
+        <h1>${student.student.id}</h1>
         <fieldset>
             <legend>
                 <h3>Account Details</h3>
@@ -18,11 +18,11 @@
             <div class="account-details">
                 <div>
                     <label class="info-title" for="email">Email:</label>
-                    <p id="email">${student.email}</p>
+                    <p id="email">${student.student.email}</p>
                 </div>
                 <div>
                     <label class="info-title" for="password">Password:</label>
-                    <p id="password">${"*".repeat(student.password.length())}</p>
+                    <p id="password">${"*".repeat(student.student.password.length())}</p>
                 </div>
             </div>
         </fieldset>
@@ -34,46 +34,46 @@
                 <div>
                     <div>
                         <label class="info-title" for="student-id">Student ID:</label>
-                        <p id="student-id">${student.studentId}</p>
+                        <p id="student-id">${student.student.studentId}</p>
                     </div>
                     <div>
                         <label class="info-title" for="first-name">First Name:</label>
-                        <p id="first-name">${student.firstName}</p>
+                        <p id="first-name">${student.student.firstName}</p>
                     </div>
                     <div>
                         <label class="info-title" for="last-name">Last Name:</label>
-                        <p id="last-name">${student.lastName}</p>
+                        <p id="last-name">${student.student.lastName}</p>
                     </div>
                     <div>
                         <label class="info-title" for="contact">Contact:</label>
-                        <p id="contact">${student.contact}</p>
+                        <p id="contact">${student.student.contact}</p>
                     </div>
                     <div>
                         <label class="info-title" for="street">Street:</label>
-                        <p id="street">${student.address.street}</p>
+                        <p id="street">${student.student.address.street}</p>
                     </div>
                     <div>
                         <label class="info-title" for="city">City:</label>
-                        <p id="city">${student.address.city}</p>
+                        <p id="city">${student.student.address.city}</p>
                     </div>
                     <div>
                         <label class="info-title" for="course">Course:</label>
-                        <p id="course">${student.course.code} : ${student.course.name}</p>
+                        <p id="course">${student.student.course.code} : ${student.student.course.name}</p>
                     </div>
                 </div>
                 <div>
                     <div>
                         <label class="info-title" for="gender">Gender</label>
-                        <p id="gender">${student.gender}</p>
+                        <p id="gender">${student.student.gender}</p>
                     </div>
                     <div class="birthdate">
                         <label class="info-title" for="birth-date">Birthdate</label>
-                        <p id="birth-date"><fmt:formatDate value="${student.birthDate}" pattern="yyyy-MM-dd"/></p>
+                        <p id="birth-date"><fmt:formatDate value="${student.student.birthDate}" pattern="yyyy-MM-dd"/></p>
                     </div>
                     <div>
                         <label class="info-title" for="languages">Languages</label>
                         <ul id="languages">
-                            <c:forEach var="languageKey" items="${student.languages}">
+                            <c:forEach var="languageKey" items="${student.student.languages}">
                                 <li>${languageOptions.get(languageKey)}</li>
                             </c:forEach>
                         </ul>

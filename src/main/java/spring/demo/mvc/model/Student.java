@@ -8,11 +8,11 @@ import javax.validation.constraints.NotBlank;
 
 public class Student extends Person {
 
-    @NotBlank(message = "student id is required")
+    @NotBlank(message = "is required")
     private String studentId;
-    @NotBlank(message = "email is required")
+    @NotBlank(message = "is required")
     private String email;
-    @NotBlank(message = "password is required")
+    @NotBlank(message = "is required")
     private String password;
     @Valid
     private Course course;

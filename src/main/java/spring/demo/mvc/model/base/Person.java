@@ -12,18 +12,18 @@ import java.util.Date;
 
 public class Person extends BaseEntity {
 
-    @NotBlank(message = "first name is required")
+    @NotBlank(message = "is required")
     private String firstName;
-    @NotBlank(message = "last name is required")
+    @NotBlank(message = "is required")
     private String lastName;
-    @NotNull(message = "gender is required")
+    @NotNull(message = "is required")
     private Gender gender;
-    @NotBlank(message = "contact is required")
+    @NotBlank(message = "is required")
     private String contact;
     @Size(min = 1, message = "at least 1 is required")
     private String[] languages;
     @DateTimeFormat(pattern = "dd/MM/yyyy")
-    @NotNull(message = "birth date is required")
+    @NotNull(message = "is required")
     private Date birthDate;
     @Valid
     private Address address;
